@@ -122,20 +122,18 @@ CREATE TABLE usuarios (
 ## 🎓 Sobre o Projeto
 
 Este projeto não visa fins comerciais.
-Foi criado apenas como atividade acadêmica para demonstrar:
+Foi criado apenas como atividade acadêmica para demonstrar e aprimorar conhecimento sobre:
 
-Construção de rotas em Flask
+- Construção de rotas em Flask
 
-Integração com MySQL
+- Integração com MySQL
 
-UI moderna usando Tailwind
+- UI moderna usando Tailwind
 
-Segurança básica de autenticação
+- Segurança básica de autenticação
 
-## 🤝 Autores
-#### *Eduardo Tabareli, Lucas Miasaki, Nicolas Emanuel, Pedro Henrique*
-**Análise e desenvolvimento de sistemas - 2º Período  - Turma: A — [AEMS]**
-
+## 🤝 Autor
+#### *Pedro Henrique Nascimento da Silva*
 
 ## 📝 Licença
 
