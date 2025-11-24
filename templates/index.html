@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Artesano.Box</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <style type="text/tailwindcss">
+        @layer base {
+          :root {
+            --corzinha: #9b664d;--corzihadohover: #462e23;--primary-color: #A0522D;--secondary-color: #8B4513;--accent-color: #386641;--background-light: #F9F6F2;--background-dark: #1E1E1E;--text-light: #333333;--text-dark: #EAEAEA;}
+        }
+      </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "var(--primary-color)",
+                        corzinha: "var(--corzinha)",
+                        corzinha2: "var(--corzihadohover)",
+                        secondary: "var(--secondary-color)",
+                        accent: "var(--accent-color)",
+                        "background-light": "var(--background-light)",
+                        "background-dark": "var(--background-dark)",
+                        "text-light": "var(--text-light)",
+                        "text-dark": "var(--text-dark)",
+                    },
+                    fontFamily: {
+                        sans: ["Poppins", "sans-serif"],
+                        serif: ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-sans text-text-light dark:text-text-dark selection:bg-primary/30">
+    <div class="flex flex-col items-center justify-center min-h-screen p-6">
+        <div class="text-center">
+            <div class="mb-10 transform transition-transform duration-500 hover:scale-105">
+                <img src="/static/assets/logo.png" alt="logo Artesano.Box" style="width: 399px; margin: auto;" />
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold text-secondary dark:text-amber-200 tracking-tight">
+                Onde a tradição encontra o seu lar.
+            </h1>
+            <p class="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-xl mx-auto">
+                Peças únicas, feitas com alma e paixão.
+            </p>
+            <div class="mt-12">
+                <button onclick="window.location.href='/login'"
+                    class="bg-primary text-white font-bold py-3 px-10 rounded-lg shadow-lg hover:bg-secondary transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
+                    Login
+                </button>
+            </div>
+            <div class="mt-5">
+                <button onclick="window.location.href='/cadastro'"
+                    class="bg-corzinha text-white font-bold py-3 px-5 rounded-lg shadow-lg hover:bg-corzinha2 transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
+                    Cadstro
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

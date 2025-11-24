@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Artesanal - Acesse sua conta</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+            font-size: 24px;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#ee7c2b",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221810",
+                        "text-light": "#1b130d",
+                        "text-dark": "#f8f7f6",
+                        "subtle-text-light": "#9a6c4c",
+                        "subtle-text-dark": "#a18a7a",
+                        "border-light": "#e7d9cf",
+                        "border-dark": "#4a3c30",
+                        "input-bg-light": "#f8f7f6",
+                        "input-bg-dark": "#33261c",
+                    },
+                    fontFamily: {
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <div class="flex h-full min-h-screen grow items-center justify-center p-4">
+            <div
+                class="w-full max-w-md rounded-xl border border-border-light bg-background-light p-8 shadow-sm dark:border-border-dark dark:bg-background-dark sm:p-12">
+                <div class="flex w-full flex-col">
+                    <header class="mb-8 flex flex-col">
+                        <div class="flex items-center gap-3 text-text-light dark:text-text-dark">
+                            <div class="size-6 text-primary">
+                                <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <path clip-rule="evenodd"
+                                        d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z"
+                                        fill="currentColor" fill-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <button class="text-2xl font-bold tracking-tight hover:underline text-primary" type="button"
+                                onclick="window.location.href='/'">Artesano.Box</button>
+                        </div>
+                    </header>
+                    <main class="flex flex-1 flex-col justify-center">
+                        <div class="mb-8">
+                            <p
+                                class="text-4xl font-black leading-tight tracking-[-0.033em] text-text-light dark:text-text-dark">
+                                Acesse sua conta
+                            </p>
+                            <p
+                                class="text-base font-normal leading-normal text-subtle-text-light dark:text-subtle-text-dark mt-2">
+                                Que bom te ver de novo!
+                            </p>
+                        </div>
+
+                        {% with messages = get_flashed_messages(with_categories=True) %}
+                        {% if messages %}
+                        <div class="mb-4">
+                            {% for category, message in messages %}
+                            <div class="
+                                text-white 
+                                px-4 py-3 mb-2 rounded-lg
+                                {% if category == 'error' %} bg-red-600 {% endif %}
+                                {% if category == 'info' %} bg-blue-600 {% endif %}">
+                                {{ message }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        {% endwith %}
+
+
+                        <form class="flex flex-col gap-6" action="/login" method="POST">
+                            <label class="flex flex-col">
+                                <p
+                                    class="pb-2 text-base font-medium leading-normal text-text-light dark:text-text-dark">
+                                    E-mail ou nome de usuário
+                                </p>
+                                <div class="relative flex w-full items-center">
+                                    <span
+                                        class="material-symbols-outlined absolute left-4 text-subtle-text-light dark:text-subtle-text-dark">
+                                        person
+                                    </span>
+                                    <input name="email_or_user"
+                                        class="form-input h-14 w-full flex-1 resize-none overflow-hidden rounded-xl border border-border-light bg-input-bg-light p-[15px] pl-12 text-base font-normal leading-normal text-text-light placeholder:text-subtle-text-light focus:border-primary focus:outline-0 focus:ring-2 focus:ring-primary/20 dark:border-border-dark dark:bg-input-bg-dark dark:text-text-dark dark:placeholder:text-subtle-text-dark dark:focus:border-primary"
+                                        placeholder="Digite seu e-mail ou usuário" type="text" required />
+                                </div>
+                            </label>
+                            <label class="flex flex-col">
+                                <p
+                                    class="pb-2 text-base font-medium leading-normal text-text-light dark:text-text-dark">
+                                    Senha
+                                </p>
+                                <div class="relative flex w-full flex-1 items-stretch">
+                                    <span
+                                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-subtle-text-light dark:text-subtle-text-dark">
+                                        lock
+                                    </span>
+                                    <input name="senha"
+                                        class="form-input h-14 w-full flex-1 resize-none overflow-hidden rounded-xl border border-border-light bg-input-bg-light p-[15px] pl-12 text-base font-normal leading-normal text-text-light placeholder:text-subtle-text-light focus:border-primary focus:outline-0 focus:ring-2 focus:ring-primary/20 dark:border-border-dark dark:bg-input-bg-dark dark:text-text-dark dark:placeholder:text-subtle-text-dark dark:focus:border-primary"
+                                        placeholder="Digite sua senha" type="password" required />
+                                </div>
+                            </label>
+                            <button type="submit"
+                                class="flex h-14 w-full items-center justify-center rounded-xl bg-primary px-6 text-base font-bold text-white shadow-sm transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark">
+                                Entrar
+                            </button>
+                        </form>
+
+                    </main>
+                    <footer class="mt-8 text-center text-sm">
+                        <p class="text-subtle-text-light dark:text-subtle-text-dark">
+                            Ainda não tem conta?
+                            <button onclick="window.location.href='/cadastro'"
+                                class="font-bold text-primary hover:underline">Cadastre-se</button>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
